@@ -33,7 +33,9 @@ function getUsers(page = 1) {
 
 function showUser(users) {
     container.innerHTML = '';
+    const fragment = new DocumentFragment();
     users.map(user => {
+
         container.innerHTML += `
             <div class="card">
                 <div class="card__img">

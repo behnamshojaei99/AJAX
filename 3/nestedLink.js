@@ -4,8 +4,8 @@ function getLink() {
         if (httpReq.readyState === 4) {
             if (httpReq.status === 200) {
                 const data = JSON.parse(httpReq.responseText);
-                const x = createList(data);
-                document.body.append(x)
+                const nestedList = createList(data);
+                document.body.append(nestedList);
             }
         }
     }
@@ -25,7 +25,7 @@ function createList(data) {
         ul.innerHTML += text;
         ul.append(myList);
     });
-    return ul
+    return ul;
 }
 
 getLink();
